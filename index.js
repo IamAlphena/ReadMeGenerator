@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const inquire = require('inquirer')''
+const inquire = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
@@ -38,9 +38,6 @@ const questions = [
         message: 'Explain how to use your application',
       },
 ];
-
-//inquire.prompt for the questions
-
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
