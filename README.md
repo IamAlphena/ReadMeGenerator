@@ -1,40 +1,23 @@
 
-# asdf
-
+# README Generator
 
   ## Overview <br  />  
-  asdf
+  This is a README generator written with NodeJS to create READMEs easily!
     
 ​
 
   ## Table of Contents <br  />  
-  *  [License](#License) <br  />  
-  *  [Installation](#installation)  <br  />  *  [Usage](#Usage)  <br  />  *  [Contributing](#Contributing)  <br  />  *  [Tests](#Tests)  <br  />  *  [Questions](#Questions)  <br  />  
+  *    [License](#License) <br  />  
+  *    [Usage](#Usage)  <br  />  
+  *    [Questions](#Questions)  <br  />  
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
-  ## Installation <br  />  
-  asdf
-  
-
-
-  ## Usage <br  />  
-  asdf
-  
-
-
-  ## Contributing <br  />  
-  This project was also worked on by: asdf
-  
-
-
-  ## Tests <br  />  
-  asdf
-  
+## Usage <br  />  
+  To use the generator, you run the node index.js and answer the prompts as they apply to your project. The project will then use those answers to populate the corresponding sections of the README as needed. 
 
 ## Questions <br  />  
-  If you have any questions about the repo, open an issue or contact me directly at adsf. You can find more of my work at [asdf](https://github.com/asdf/).
+  If you have any questions about the repo, open an issue or contact me directly at kimberly.hage@gmail.com . You can find more of my work at [IamAlphena](https://github.com/IamAlphena/).
   
 
