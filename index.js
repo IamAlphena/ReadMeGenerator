@@ -23,13 +23,13 @@ const questions = [
       },
     {
         type: 'input',
-        name: 'systems',
-        message: 'What systems and technology was used?',
+        name: 'installation',
+        message: 'How do you install your app?',
     },
     {
         type: 'input',
-        name: 'installation',
-        message: 'How do you install your app?',
+        name: 'use',
+        message: 'Explain how to use your application',
     },
     {
         type: 'input',
@@ -38,12 +38,23 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'use',
-        message: 'Explain how to use your application',
+        name: 'test',
+        message: 'How do you run tests?',
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email?',
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'What is your github name?',
+    },
+
 ];
 
-// TODO: Create a function to write README file
+// function writes the readme to file and logs errors or that the readme was written
 function writeToFile(filetype, data) {
     fs.writeFile(filetype, data, (err) =>
         err ? console.log(err) : console.log('Created your README!')
@@ -60,7 +71,6 @@ function init() {
         //then take the data and pass through write to file
         .then((data) => {
             let markdownPageContent = generateMarkdown(data);
-            console.log(markdownPageContent);
             const filename = 'README.md' ;
             writeToFile(filename, markdownPageContent);
         })
