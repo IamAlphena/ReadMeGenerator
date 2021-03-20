@@ -1,21 +1,14 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
+//Function to create the markdown of the README
 function generateMarkdown(data) { 
-  console.log('hello', data);
-  
-  let tableOfContents = `## Table of Contents <br  />  ` 
-  
+  //generate table of contents  
+  let tableOfContents = `
+  ## Table of Contents <br  />  
+  * [License] (#License)
+  ` 
+  //use if statements for optional sections to not be included in table of contents
   if (data.installation !== '') {
     tableOfContents += `* [Installation] (#installation)  <br  />  `
   };
@@ -23,7 +16,35 @@ function generateMarkdown(data) {
     tableOfContents += `* [Usage] (#usage)  <br  />  `
   };
 
+//empty string to populate with items from switch
+let licenses = '';
 
+//based on information in data.license
+switch (data.license){
+  //if MIT, add this badge
+  case 'MIT':
+    licenses += `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+  break
+  //if APACHE, add this badge
+  case 'APACHE 2.0':
+    licenses += `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+    break
+    //if GPL, add this badge
+  case 'GPL 3.0':
+    licenses += `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+    break
+  //if BSD, add this badge
+  case 'BSD 3':
+    licenses += `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`
+    break
+    //if None, populate with this text
+  case 'None':
+    licenses += `There are no licenses for this project`
+    break
+}
+
+console.log(licenses)
+//combines all options into final product to return when called
   const finalMkdn  = `
 # ${data.title}
 
@@ -33,14 +54,16 @@ ${data.overview}
 ​
 ${tableOfContents}
 
-<a name="installation"/>
+## License
+${licenses}
+
 ## Installation
-${data.use}
+${data.installation}
 
 ## Systems Used
 ${data.systems}
 
-## License
+
 
 ## Tests
 
