@@ -20,7 +20,7 @@ const questions = [
         name: 'license',
         message: 'What kind of license should your project have?',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
-      },
+    },
     {
         type: 'input',
         name: 'installation',
@@ -71,7 +71,7 @@ function init() {
         //then take the data and pass through write to file
         .then((data) => {
             let markdownPageContent = generateMarkdown(data);
-            const filename = 'README.md' ;
+            const filename = 'README.md';
             writeToFile(filename, markdownPageContent);
         })
 }
