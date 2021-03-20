@@ -15,17 +15,21 @@ const questions = [
         name: 'overview',
         message: 'Give a sentance or two explaining your project',
     },
-    //   {
-    //     type: 'list',
-    //     name: 'license',
-    //     message: 'Select the appropriate licences',
-    //     choices: [//find licesnces
-    //     ]
-    //   },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'What kind of license should your project have?',
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+      },
     {
         type: 'input',
         name: 'systems',
         message: 'What systems and technology was used?',
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'How do you install your app?',
     },
     {
         type: 'input',
@@ -40,11 +44,11 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-// function writeToFile(filetype, data) { }    
-//     fs.writeFile('README.md', data,  (err) =>
-//     err ? console.log(err) : console.log('Created your README!')
-
-// )
+function writeToFile(filetype, data) {
+    fs.writeFile(filetype, data, (err) =>
+        err ? console.log(err) : console.log('Created your README!')
+    )
+}
 
 
 // function that runs it all
@@ -56,8 +60,9 @@ function init() {
         //then take the data and pass through write to file
         .then((data) => {
             let markdownPageContent = generateMarkdown(data);
-            console.log(markdownPageContent)
-            writeToFile('README.md', markdownPageContent);
+            console.log(markdownPageContent);
+            const filename = 'README.md' ;
+            writeToFile(filename, markdownPageContent);
         })
 }
 
